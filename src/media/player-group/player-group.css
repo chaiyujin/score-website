@@ -1,0 +1,124 @@
+.player-group {
+    /* non-selection */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                          supported by Chrome and Opera */
+}
+
+.player-group .media-container {
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.player-group .score-selection .score-hint {
+    margin: 10px 0;
+    height: 25px;
+    line-height: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    color: rgba(89,203,183);
+}
+
+.player-group .score-selection .score-group {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0px 5px;
+
+}
+
+.button button {
+    width: 130px;
+    height: 57px;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 2;
+    border: none;
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 0 0 5px #222;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    transition: background .2s linear, color .2s linear, box-shadow .2s linear;
+}
+
+.button .yes {
+    box-shadow: 0 5px 10px rgba(89,203,183,.3);
+}
+.button .yes:hover {
+    background: rgba(89,203,183,.6);
+    color : #fff;
+}
+.button .yes.active  {
+    background: rgba(89,203,183);
+    color: #fff;
+}
+.button .non {
+    box-shadow: 0 5px 10px rgba(255,79,94,.2);
+}
+.button .non:hover {
+    background: rgba(255,79,94,.6);
+    color : #fff;
+}
+.button .non.active  {
+    background: rgba(255,79,94);
+    color: #fff;
+}
+
+.button button:focus {
+    outline: none;
+}
+
+.button button:disabled {
+    box-shadow: 0 0 5px #eee;
+    background: #fff;
+    color : #eee;
+    cursor: default;
+}
+.button button:disabled:hover {
+    box-shadow: 0 0 5px #eee;
+    background: #fff;
+    color : #eee;
+    cursor: default;
+}
+

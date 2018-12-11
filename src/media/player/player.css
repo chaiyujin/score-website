@@ -1,0 +1,143 @@
+.media-canvas {
+    flex: 1;
+    width: auto;
+    position: relative;
+    padding: 5px;
+    min-width: 640px;
+    max-width: 68%;
+
+    /* non-selection */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                          supported by Chrome and Opera */
+}
+
+.media-canvas .tips {
+    height: 15px;
+    line-height: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #f84c3f;
+}
+
+.media-canvas .content-area {
+    margin-bottom: 10px;
+    position: relative;
+    box-shadow: 0px 0px 10px #80929e;
+    height: 0;
+    padding-top: 56.25%;
+}
+
+.media-canvas .content-area > * {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
+
+.media-canvas .content-area .card {
+    font-size: calc(32px);
+    font-weight: 400;
+}
+
+.media-canvas .primary-button-group {
+    position: relative;
+    margin: 0;
+}
+
+.media-canvas .primary-button {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0px 5px;
+}
+
+.media-canvas .primary-button button {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    padding: 1px 6px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 2;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.media-canvas .primary-button button img {
+    display: flex;
+    margin: auto;
+    width: 20px;
+}
+
+.media-canvas .primary-button button:focus {
+    outline: none;
+}
+
+.media-canvas .primary-button button:disabled {
+    cursor: default;
+}
+
+.media-canvas .primary-button .background {
+    position: absolute;
+    opacity: .5;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 88px;
+    height: 88px;
+    filter: 'url(data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><f…er id="filter"><feGaussianBlur stdDeviation="7.6" /></filter></svg>#filter)';
+    -webkit-filter: blur(7.6px);
+    filter: blur(7.6px);
+    -webkit-transition: opacity 0.5s linear, width 0.5s linear, height 0.5s linear ;
+    transition: opacity 0.5s linear, width 0.5s linear, height 0.5s linear ;
+    background: -webkit-gradient(linear,right top,left top,from(#88d1f1),to(#b1b5e5));
+    background: linear-gradient(270deg,#88d1f1,#b1b5e5);
+}
+
+.media-canvas .primary-button:hover .background  {
+    width: 88px;
+    height: 88px;
+    opacity: 1.0;
+}
+
+.media-canvas .primary-button .background.playing {
+    opacity: 0.8;
+    animation: playing-animation infinite 2s linear;
+}
+
+@keyframes playing-animation {
+    0% {
+        width: 88px;
+        height: 88px;
+        transform: rotate(0deg);
+    }
+    50% {
+        width: 88px;
+        height: 88px;
+        transform: rotate(180deg);
+    }
+    100% {
+        width: 88px;
+        height: 88px;
+        transform: rotate(360deg);   
+    }
+}
