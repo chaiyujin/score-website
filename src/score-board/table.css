@@ -56,7 +56,6 @@ select {
   width: 50%;
   height: 45px;
   text-align: center;
-  float: left;
   border-radius: 0;
 }
 input[type="radio"] + label:first-of-type {
