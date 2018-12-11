@@ -66,7 +66,10 @@ class PlayerGroup extends Component {
             })
         }
         if (this.props.onScored !== null) {
-            this.props.onScored(scoreList)
+            this.props.onScored({
+                scoreList: scoreList,
+                mediaList: this.props.mediaList
+            })
         }
     }
 

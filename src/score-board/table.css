@@ -178,8 +178,18 @@ select option {
   transition: 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
 }
+.board {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
 .container {
-  max-width: 38em;
+  width: 30%;
+  min-width: 38em;
+  display: inline;
   padding: 1em 3em 2em 3em;
   margin: 0em auto;
   background-color: #fff;

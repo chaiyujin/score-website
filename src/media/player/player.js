@@ -44,10 +44,10 @@ class Player extends Component {
         var tips = (this.props.once) ? "This " + this.props.type + " can only be played once!" : "";
         var mediaContent = (this.props.type === "audio")
             ?   <div className="card">
-                    <audio ref={this.refMedia} onEnded={this.onEnd} src="./assets/audio/test.wav">the audio</audio>
+                    <audio ref={this.refMedia} onEnded={this.onEnd} src={this.props.src}>the audio</audio>
                     <div>{this.props.transcript}</div>
                 </div>
-            : <video ref={this.refMedia} onEnded={this.onEnd} src="./assets/video/test.mp4">the video</video>;
+            : <video ref={this.refMedia} onEnded={this.onEnd} src={this.props.src}>the video</video>;
         var btnImg = (this.state.isStop) ? this.props.playButton : this.props.stopButton;
         var btnBkg = (this.state.isStop) ? "background" : "background playing"
         return (

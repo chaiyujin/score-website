@@ -19,24 +19,36 @@ class App extends Component {
         }
     }
 
-    handleScoreList(scoreList) {
-        console.log("Finish!")
+    handleResult(result) {
+        this.setState({finished: true})
+        this.saveMediaScoreList(result)
+    }
+
+    saveMediaScoreList(result) {
+        const scoreList = result.scoreList;
+        const information = result.information;
+        console.log("user information", information)
         for (var i = 0; i < scoreList.length; ++i) {
             console.log(scoreList[i])
         }
-        this.setState({finished: true})
+    }
+
+    /* get media */
+    randomGetMediaList() {
+        return [
+            [ {type:'video', once:true,  hint: 'Score of Reality', src: "./assets/video/test.mp4"} ],
+            [ {type:'audio', once:false, hint: 'Score of Reality', src: "./assets/audio/test.wav"} ]
+        ]
+
     }
 
     render() {
-        var mediaList = [
-            [ {type:'video', once:true,  hint: 'Score of Reality'} ],
-            [ {type:'audio', once:false, hint: 'Score of Reality'} ]
-        ]
+        var mediaList = this.randomGetMediaList()
         return (
             <div ref={this.rootRef} className="App">
                 <div hidden={this.state.finished}>
                     <ScoreBoard mediaList={mediaList}
-                                onFinished={this.handleScoreList.bind(this)} />
+                                onFinished={this.handleResult.bind(this)} />
                 </div>
                 <div hidden={!this.state.finished}>
                     <div className="App-header">Thanks for your support!</div>
